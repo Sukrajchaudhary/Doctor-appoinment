@@ -7,6 +7,7 @@ import icon02 from "../assets/images/icon02.png";
 import icon03 from "../assets/images/icon03.png";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
+import About from "../components/About/About";
 
 const Home = () => {
   return (
@@ -86,7 +87,6 @@ const Home = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-[30px] mt-[30px] lg:mt-[55px]">
-             
               <div className="py-[30px] px-5">
                 <div className="flex items-center justify-center">
                   <img src={icon01} alt="" />
@@ -156,6 +156,8 @@ const Home = () => {
             </div>
           </div>
         </section>
+
+        <About/>
       </>
     </>
   );
