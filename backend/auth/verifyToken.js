@@ -18,7 +18,7 @@ export const authenticate = (req, res, next) => {
     const token = authToken.split(" ")[1];
 
     // verify token
-    const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
+    const decoded = jwt.verify(token, process.env.JWT_SECRETE_KEY);
 
     req.userId = decoded.id;
     req.role = decoded.role;
@@ -28,7 +28,7 @@ export const authenticate = (req, res, next) => {
     if (err.name == "TokenExpiredError") {
       return res.status(401).json({ message: "Token is expired" });
     }
-    return res.status(401).json({ success: false, message: "Invalid Token" });
+    return res.status(401).json({ success: false, message: err });
   }
 };
 
