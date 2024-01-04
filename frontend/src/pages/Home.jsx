@@ -15,8 +15,7 @@ import About from "../components/About/About";
 import ServiceList from "../components/Services/ServiceList";
 import DoctorList from "../components/Doctors/DoctorList";
 import FaqList from "../components/Faq/FaqList";
-import  Testimonial from "../components/Testimonial/Testimonial";
-
+import Testimonial from "../components/Testimonial/Testimonial";
 
 const Home = () => {
   return (
@@ -30,14 +29,18 @@ const Home = () => {
               <div>
                 <div className="lg:w-[570px]">
                   <h1 className="text-[36px] leading-[46px] text-headingColor font-[800] md:text-[60px] md:leading-[70px]">
-                    We help patients live a healthy, longer life.
+                    In Pursuit of Family happiness
                   </h1>
                   <p className="text__para">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Delectus cumque corrupti sed tenetur. Vitae alias,
-                    consectetur rem obcaecati doloremque eius beatae corporis
-                    nemo dolorem molestiae consequatur mollitia sunt explicabo
-                    eum!
+                    Infertility has been a major source of stress for infertile
+                    couples. Joy brought with the birth of a child in a family
+                    is immensible, which motivates Manmohan IVF to pursuit this
+                    happiness. Manmohan IVF center is highly specialized in
+                    incubation process with immense success rate. We are team of
+                    enthusiast experts consisting of doctors, embryologists,
+                    staffs, that only focus on helping people with infertility
+                    problems. We care our patient for entirety of pregnancy
+                    period with much proactive approach.
                   </p>
                   <button className="btn">Request an Appointment</button>
                 </div>
@@ -231,9 +234,9 @@ const Home = () => {
                   Consultation
                 </div>
                 <div className="flex items-center gap-[6px] lg:gap-[10px] mt-2 lg:mt-[18px]">
-                  <img src={avatarIcon} alt="" />
+                  <img src={avatarIcon} className="h-10 w-10" alt="" />
                   <h4 className="text-[10px] leading-3 lg:text-[16px] lg:leading-[22px] font-[700] text-headingColor">
-                    Wayne Collins
+                    Dr. Bhaba Malla Shrestha
                   </h4>
                 </div>
               </div>
@@ -284,7 +287,7 @@ const Home = () => {
                 unmatched, expert health care.
               </p>
             </div>
-            <Testimonial/>
+            <Testimonial />
           </div>
         </section>
         {/* ================ Testimonial Section End ================= */}

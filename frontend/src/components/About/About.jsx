@@ -20,16 +20,17 @@ const About = () => {
           <div className="w-full lg:w-1/2 xl:w-[670px] order-1 lg:order-2">
             <h2 className="heading">Proud to be one of the nations best</h2>
             <p className="text__para">
-              For 30 years in a row, U.S. news & World Report has recognized us
-              as one of the best publics hospitals in the Nation and #1 in
-              Texas.
+              In the heart of Kathmandu, we thrive on the belief that our
+              dedication to excellence not only shapes the present experiences
+              of our patients but also lays the foundation for a future filled
+              with hope and new beginnings.
             </p>
             <p className="text__para mt-[30px]">
-              Our best in something we strive for each day, caring for our
-              patients-not looking back at what we accomplished but towards what
-              we can do tomorrow. Providing the best.
+              At Manmohan IVF Center, we are not just a medical institution; we
+              are a promise for a brighter, healthier, and more fulfilling
+              tomorrow.
             </p>
-            
+
             <Link to="/">
               <button className="btn">Learn More</button>
             </Link>
