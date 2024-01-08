@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import avatar from "../../assets/images/avatar-icon.png";
 import { formateDate } from "../../utils/formateDate";
 import { AiFillStar } from "react-icons/ai";
@@ -6,35 +6,55 @@ import FeedbackForm from "./FeedbackForm";
 
 const Feedback = () => {
   const [showFeedbackForm, setShowFeedbackForm] = useState(false);
+  const [feedbackData, setFeedbackData] = useState([]);
+
+  useEffect(() => {
+    const fetchFeedbackData = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/v1/doctors/6592d85647c50503267e3014/reviews");
+        if (response.ok) {
+          const data = await response.json();
+          setFeedbackData(data.data);
+        } else {
+          console.error("Error fetching feedback");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+
+    fetchFeedbackData();
+  }, []);
+
   return (
     <div>
       <div className="mb-[50px]">
         <h4 className="text-[20px] leading-[30px] font-bold text-headingColor mb-[30px]">
-          All reviews (272)
+          All reviews ({feedbackData.length})
         </h4>
 
-        <div className="flex justify-between gap-10 mb-[30px]">
-          <div className="flex gap-3">
-            <figure className="w-10 h-10 rounded-full">
-              <img src={avatar} className="w-full" alt="" />
-            </figure>
+        {feedbackData.map((feedback) => (
+          <div key={feedback._id} className="flex justify-between gap-10 mb-[30px]">
+            <div className="flex gap-3">
+              <figure className="w-10 h-10 rounded-full">
+                <img src={avatar} className="w-full" alt="" />
+              </figure>
 
-            <div>
-              <h5>Ali ahmed</h5>
-              <p className="text-[14px] leading-6 text-textColor">
-                {formateDate("02-14-2023")}
-              </p>
-              <p className="text_para mt-3 font-medium text-[14px]">
-                Good Services, highly recommended
-              </p>
+              <div>
+
+                <p className="text-[14px] leading-6 text-textColor">
+                  {formateDate(feedback.createdAt)}
+                </p>
+                <p className="text_para mt-3 font-medium text-[14px]">{feedback.reviewText}</p>
+              </div>
+            </div>
+            <div className="flex gap-1">
+              {[...Array(feedback.rating).keys()].map((index) => (
+                <AiFillStar key={index} color="#0067FF" />
+              ))}
             </div>
           </div>
-          <div className="flex gap-1">
-            {[...Array(5).keys()].map((_, index) => (
-              <AiFillStar key={index} color="#0067FF" />
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
 
       {!showFeedbackForm && (

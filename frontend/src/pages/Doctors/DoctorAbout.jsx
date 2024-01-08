@@ -7,13 +7,10 @@ const DoctorAbout = () => {
       <div>
         <h3 className="text-[20px] leading-[30px] text-headingColor font-semibold flex items-center gap-2">
           About of
-          <span className="text-irisBlueColor">Sailesh Rokaya</span>
+          <span className="text-irisBlueColor">Bikash Rokaya</span>
         </h3>
         <p className="text_para">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque
-          inventore dolorem fugit temporibus perferendis exercitationem
-          molestias fuga enim atque nesciunt. Porro, iste? Hic expedita fuga cum
-          ut sit eum consectetur.
+        Professional doctor with five year of experience, and three year of expereinece in medicine field.
         </p>
       </div>
       <div className="mt-12">

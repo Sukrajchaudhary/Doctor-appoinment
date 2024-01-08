@@ -66,17 +66,21 @@ export const getAllDoctors = async (req, res) => {
         ],
       }).select("-password");
     } else {
-      const doctors = await Doctor.find({ isApproved: "approved" }).select(
-        "-password"
-      );
+      doctors = await Doctor.find({}).select("-password"); // Removed isApproved condition
     }
+
+    console.log('Doctors:', doctors); // Add this line for logging
+
     res
       .status(200)
       .json({ success: true, message: "Doctors Found", data: doctors });
   } catch (err) {
+    console.error(err);
     res.status(404).json({ success: false, message: "No doctors found" });
   }
 };
+
+
 
 export const getDoctorProfile = async (req, res) => {
   const doctorId = req.userId;
