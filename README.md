@@ -30,7 +30,7 @@ Welcome to the demo of our Doctor Appointment Booking System. Below are some scr
 
 ## Contact Us
 
-For any questions or further information, please contact us at [support@doctorbookingapp.com](mailto:support@doctorbookingapp.com).
+
 
 ---
 
